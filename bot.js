@@ -60,17 +60,16 @@ const srvPrefix = "$";
 client.on("message", (msg) => {
   if (!msg.content.startsWith(srvPrefix) || msg.author.bot) return;
 
-const args = message.content.slice(srvPrefix.length).trim().split(' ');
-const command = args.shift().toLowerCase();
-// the rest of your code
+  const args = message.content.slice(srvPrefix.length).trim().split(" ");
+  const command = args.shift().toLowerCase();
+  // the rest of your code
   if (msg.content == "%solve fib py") msg.reply(pyFib);
   else if (msg.content == "%solve fib js") msg.reply(jsFib);
-
   // server roles
-  else if (msg.content == "mod"){
-    let taggedUser = msg.mentions.users.first()
-    msg.channel.send(`You want to mod ${taggedUser.username}`)
-  };
+  else if (msg.content == "mod") {
+    let taggedUser = msg.mentions.users.first();
+    msg.channel.send(`You want to mod ${taggedUser.username}`);
+  }
   if (msg.content == "thanks bot!" || msg.content == "thanks bot")
     msg.react("❤");
 });

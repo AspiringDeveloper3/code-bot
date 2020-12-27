@@ -38,11 +38,29 @@ while count < nterms:
    n2 = nth
    count += 1`;
 
+const jsFib = `
+//number of terms
+const number = parseInt(prompt('Enter the number of terms: '));
+
+//1st and 2nd terms
+let n1 = 0, n2 = 1, nextTerm;
+
+console.log('Fibonacci Series:');
+
+//loop for the sequence
+for (let i = 1; i <= number; i++) {
+    console.log(n1);
+    nextTerm = n1 + n2;
+    n1 = n2;
+    n2 = nextTerm;
+}`;
+
 client.on("message", (msg) => {
   if (msg.content == "%solve fib py") msg.reply(pyFib);
   else if (msg.content == "$mod me") modUser(msg.member);
   if (msg.content == "thanks bot!" || msg.content == "thanks bot")
     msg.react("❤");
+  else if (msg.content == "%solve fib js") msg.reply(jsFib);
 });
 
 //Functions

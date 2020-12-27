@@ -58,7 +58,7 @@ for (let i = 1; i <= number; i++) {
 const srvPrefix = "$";
 
 client.on("message", (msg) => {
-  if (!msg.content.startsWith(srvPrefix) || message.author.bot) return;
+  if (!msg.content.startsWith(srvPrefix) || msg.author.bot) return;
 
 const args = message.content.slice(srvPrefix.length).trim().split(' ');
 const command = args.shift().toLowerCase();

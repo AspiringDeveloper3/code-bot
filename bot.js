@@ -56,21 +56,6 @@ for (let i = 1; i <= number; i++) {
 }`;
 
 client.on("message", (msg) => {
-  // when not prefix
-  if (!msg.content.startsWith("$") || !msg.content.startsWith("%")) return;
-
-  const withoutPrefix = message.content.slice(config.prefix.length);
-  const split = withoutPrefix.split(/ +/);
-  const command = split[0];
-  const args = split.slice(1);
-
-  if (command == "mod") {
-    const user = msg.mentions.users.first();
-
-    return msg.channel.send(`You want to mod => ${user.username} right?`);
-  }
-
-  // when prefix
   if (msg.content == "%solve fib py") msg.reply(pyFib);
   else if (msg.content == "$mod me") modUser(msg.member);
   if (msg.content == "thanks bot!" || msg.content == "thanks bot")

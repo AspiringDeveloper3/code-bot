@@ -57,13 +57,15 @@ for (let i = 1; i <= number; i++) {
 
 client.on("message", (msg) => {
   if (msg.content == "%solve fib py") msg.reply(pyFib);
-  else if (msg.content == "$mod me") modUser(msg.member);
+  if (msg.content == "$mod me") modUser(msg.member);
   if (msg.content == "thanks bot!" || msg.content == "thanks bot")
     msg.react("❤");
-  else if (msg.content == "%solve fib js") msg.reply(jsFib);
+  if (msg.content == "%solve fib js") msg.reply(jsFib);
+  if (msg.content == "$unmod me") unmodUser(msg.member);
 });
 
 //Functions
 const modUser = (member) => member.roles.add("791179874974564392");
+const unmodUser = (member) => member.roles.remove("791179874974564392");
 
 client.login(process.env.BOT_TOKEN);

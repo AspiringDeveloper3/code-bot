@@ -58,8 +58,11 @@ for (let i = 1; i <= number; i++) {
 const help = `Hola Amigos! I am "helping amigo", and am like the serve-r for this server
 I have many command like :-
   => "$help" - to get all the commands
+
   => "= solve" - prefix for calculation of common problems in various langs
+
   => "$" - prefix for server management, i.e. roles and appearance
+  
   => "$bot help" - to get this msg for a brief explanation
   
   P.S. This bot is still in development, pls contribute with code through this github repository
@@ -67,7 +70,9 @@ I have many command like :-
 
 const commands = `There are various commands for this bot :-
   1) = solve <problem> <lang>, i.e. = solve fib (fibonacci) js (the language)
+
   2) $ <server role> me, i.e. $ mod (adds mod role) me
+
   3) "help" / "bot help" for commands and help
   
   P.S. This bot is in development, so plz consider contributing to this repository

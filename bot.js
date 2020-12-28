@@ -55,13 +55,25 @@ for (let i = 1; i <= number; i++) {
     n2 = nextTerm;
 }`;
 
+const help = `Hola Amigos! I am "helping amigo", and am like the serve-r for this server
+I have many command like :-
+  => "help" - to get all the commands
+  => "= solve" - prefix for calculation of common problems in various langs
+  => "$" - prefix for server management, i.e. roles and appearance
+  
+  P.S. This bot is still in development, pls contribute with code through this github repository
+  --https://github.com/AspiringDeveloper3/code-bot 😊`;
+
 client.on("message", (msg) => {
-  if (msg.content == "%solve fib py") msg.reply(pyFib);
+  if (msg.content == "=solve fib py" || msg.content == "= solve fib py")
+    msg.reply(pyFib);
   if (msg.content == "$mod me") modUser(msg.member);
   if (msg.content == "thanks bot!" || msg.content == "thanks bot")
     msg.react("❤");
-  if (msg.content == "%solve fib js") msg.reply(jsFib);
+  if (msg.content == "=solve fib js" || msg.content == "= solve fib js")
+    msg.reply(jsFib);
   if (msg.content == "$unmod me") unmodUser(msg.member);
+  if (msg.content == "bot help") msg.reply(help);
 });
 
 //Functions

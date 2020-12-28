@@ -57,10 +57,10 @@ for (let i = 1; i <= number; i++) {
 
 const help = `Hola Amigos! I am "helping amigo", and am like the serve-r for this server
 I have many command like :-
-  => "help" - to get all the commands
+  => "$help" - to get all the commands
   => "= solve" - prefix for calculation of common problems in various langs
   => "$" - prefix for server management, i.e. roles and appearance
-  => "bot help" - to get this msg for a brief explanation
+  => "$bot help" - to get this msg for a brief explanation
   
   P.S. This bot is still in development, pls contribute with code through this github repository
   --https://github.com/AspiringDeveloper3/code-bot 😊`;
@@ -82,9 +82,9 @@ client.on("message", (msg) => {
   if (msg.content == "=solve fib js" || msg.content == "= solve fib js")
     msg.reply(jsFib);
   if (msg.content == "$unmod me") unmodUser(msg.member);
-  if (msg.content == "bot help") msg.reply(commands);
+  if (msg.content == "$bot help") msg.reply(commands);
 
-  if (msg.content == "help") msg.reply(help)
+  if (msg.content == "$help") msg.reply(help)
 });
 
 //Functions

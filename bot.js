@@ -76,20 +76,12 @@ const commands = `There are various commands for this bot :-
   3) "help" / "bot help" for commands and help
   
   P.S. This bot is in development, so plz consider contributing to this repository
-  --https://github.com/AspiringDeveloper3/code-bot 😊`
+  --https://github.com/AspiringDeveloper3/code-bot 😊`;
 
 client.on("message", (msg) => {
-  if (msg.content == "=solve fib py" || msg.content == "= solve fib py")
-    msg.reply(pyFib);
-  if (msg.content == "$mod me") modUser(msg.member);
-  if (msg.content == "thanks bot!" || msg.content == "thanks bot")
-    msg.react("❤");
-  if (msg.content == "=solve fib js" || msg.content == "= solve fib js")
-    msg.reply(jsFib);
-  if (msg.content == "$unmod me") unmodUser(msg.member);
-  if (msg.content == "$bot help") msg.reply(commands);
-
-  if (msg.content == "$help") msg.reply(help)
+  if (msg.content === "yo") {
+    msg.reply("Hey! Wassup?");
+  }
 });
 
 //Functions

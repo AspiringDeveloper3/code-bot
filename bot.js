@@ -2,6 +2,8 @@ require("dotenv").config();
 
 const discord = require("discord.js");
 
+const forbiddenWords = ["fuck", "fk", "shit", "fek", "bitch"];
+
 const client = new discord.Client({
   partials: ["MESSAGE"],
 });
@@ -17,7 +19,13 @@ client.on("message", (msg) => {
   }
   if (msg.content.toLowerCase() === "what u doing?") {
     msg.reply("Coding! and Studying, duh");
-  } 
+  }
+  for (var i = 0; i < forbidenWords.length; i++) {
+    if (msg.content.includes(forbidenWords[i])) {
+      msg.channel.send("Hey! That word isnt allowed here! 😡");
+      break;
+    }
+  }
 });
 
 client.login(process.env.BOT_TOKEN);

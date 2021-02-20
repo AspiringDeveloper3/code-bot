@@ -30,8 +30,9 @@ client.on("message", (msg) => {
   }
   for (var i = 0; i < forbidenWords.length; i++) {
     if (msg.content.includes(forbidenWords[i])) {
-      msg.reply("Hey! That word isnt allowed here! 😡").then((msg) => {
-        msg.delete({ timeout: 200 }).catch((err) => console.log(err));
+      msg.delete({
+        timeout: 200,
+        reason: "Hey! That word isnt allowed here! 😡",
       });
     }
   }

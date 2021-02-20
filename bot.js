@@ -9,19 +9,18 @@ const client = new discord.Client({
 client.on("ready", () => console.log("Bot ready !"));
 
 client.on("message", (msg) => {
-  if (msg.content.toLowerCase === "yo" || msg.content.toLowerCase === "hello") {
+  if (
+    msg.content.toLowerCase() === "yo" ||
+    msg.content.toLowerCase() === "hello"
+  ) {
     msg.reply("Hey! Wassup?");
   }
-  if (msg.content === "What u doing?") {
+  if (msg.content.toLowerCase() === "what u doing?") {
     msg.reply("Coding! and Studying, duh");
-  }
-  if (msg.content.startsWith === "Hello" || msg.content.startsWith === "Yo!") {
-    msg.channel.send("Hello!");
+  } else {
+    var blah = msg.content.split("");
+    msg.channel.send(blah);
   }
 });
-
-//Functions
-const modUser = (member) => member.roles.add("791179874974564392");
-const unmodUser = (member) => member.roles.remove("791179874974564392");
 
 client.login(process.env.BOT_TOKEN);

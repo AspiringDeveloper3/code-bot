@@ -18,7 +18,7 @@ client.on("message", (msg) => {
   if (msg.content.toLowerCase() === "what u doing?") {
     msg.reply("Coding! and Studying, duh");
   } else {
-    var blah = msg.content.split("");
+    var blah = msg.content.split();
     msg.channel.send(blah);
   }
 });

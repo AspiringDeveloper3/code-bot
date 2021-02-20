@@ -19,7 +19,7 @@ client.on("message", (msg) => {
     msg.reply("Coding! and Studying, duh");
   } else {
     var blah = msg.content.split();
-    msg.channel.send(blah);
+    msg.reply(blah);
   }
 });
 

@@ -27,11 +27,14 @@ client.on("message", (msg) => {
   }
   if (msg.content.toLowerCase() === "what u doing?") {
     msg.reply("Coding! and Studying, duh");
-  }
-  for (var i = 0; i < forbidenWords.length; i++) {
-    if (msg.content.includes(forbidenWords[i])) {
-      msg.delete(1);
-      msg.reply("Hey! That word isnt allowed here! 😡");
+  } else {
+    for (var i = 0; i < forbidenWords.length; i++) {
+      if (msg.content.includes(forbidenWords[i])) {
+        msg.delete({
+          timeout: 20,
+          reason: "Hey!, That word isn't allowed here 😡",
+        });
+      }
     }
   }
 });

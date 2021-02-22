@@ -32,8 +32,9 @@ client.on("message", (msg) => {
       if (msg.content.includes(forbidenWords[i])) {
         msg.delete({
           timeout: 20,
-          reason: "Hey!, That word isn't allowed here 😡",
+          reason: "Bad Word",
         });
+        msg.reply("Hey! That word isn't allowed here 😡");
       }
     }
   }
